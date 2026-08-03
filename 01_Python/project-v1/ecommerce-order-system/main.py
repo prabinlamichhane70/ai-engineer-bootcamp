@@ -1,4 +1,4 @@
-
+from abc import ABC, abstractmethod
 
 
 
@@ -34,5 +34,42 @@ class Product:
         print(f"Product Stock Remaining: {self.stock_remaining}")
 
 
-p1 = Product(5, "Keyboard", 2, 250, 3)
-p1.show_information()
+
+
+class Payment(ABC):
+    
+    @abstractmethod
+    def pay(self):
+        pass
+
+class CreditCardPayment(Payment):
+
+    def pay(self):
+        print("Credit card payment is done")
+
+class PayPalPayment(Payment):
+
+    def pay(self):
+        print("Paypal Payment is done")
+
+class CashOnDelivery(Payment):
+
+    def pay(self):
+        print("Cash on delivery is done")
+
+
+
+# c1 = Customer(4, "Hari", "hari@gmail.com", 9845226603)
+# c1.show_information()
+
+# p1 = Product(5, "Keyboard", 2, 250, 3)
+# p1.show_information()
+
+creditcard_payment = CreditCardPayment()
+paypal_payment = PayPalPayment()
+cash_payment = CashOnDelivery()
+
+all_payment = [creditcard_payment, paypal_payment, cash_payment]
+
+for payment in all_payment:
+    payment.pay()
