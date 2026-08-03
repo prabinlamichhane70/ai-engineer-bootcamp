@@ -18,5 +18,21 @@ class Customer:
         print(f"Customer Phone: {self.customer_phone}")
 
 
-c1 = Customer(4, "Hari", "hari@gmail.com", 9845226603)
-c1.show_information()
+class Product:
+    def __init__(self, product_id, product_name, product_price, stock_remaining):
+        self.product_id = product_id
+        self.product_name = product_name
+        self.product_price = product_price
+        self.stock_remaining = stock_remaining
+
+    def show_information(self):
+        print("Product Information")
+        print("-------------------------")
+        print(f"Product ID: {self.product_id}")
+        print(f"Product Name: {self.product_name}")
+        print(f"Product Price: {self.product_price}")
+        print(f"Product Stock Remaining: {self.stock_remaining}")
+
+
+p1 = Product(5, "Keyboard", 2, 250, 3)
+p1.show_information()

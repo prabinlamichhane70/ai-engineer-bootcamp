@@ -28,7 +28,6 @@ What information should each class contain?
 - Product
     - product_id
     - product_name
-    - product_quantity
     - product_price
     - stock_remaining
 
